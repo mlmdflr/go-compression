@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"flag"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -34,7 +33,7 @@ func main() {
 	if h {
 		flag.Usage()
 	}
-	file, err := ioutil.ReadFile(c)
+	file, err := os.ReadFile(c)
 	if err != nil {
 		log.Fatalf("Some error occured while reading file. Error: %s", err)
 	}
